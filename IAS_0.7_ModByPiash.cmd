@@ -189,15 +189,15 @@ echo:          Github: https://github.com/filinta51
 echo:          _____________________________________________   
 echo:                                                          
 echo:          [1] Active et IDM                                
-echo:          [2] Sıfırla IDM Activation / Deneme süresi
+echo:          [2] Sifirla IDM Activation / Deneme süresi
 echo:          _____________________________________________   
 echo:                                                          
-call :_color2 %_White% "          [3] Toggle Windows Güvenlik duvarı  " %_col% "[%_status%]"
+call :_color2 %_White% "          [3] Toggle Windows Güvenlik duvari  " %_col% "[%_status%]"
 echo:          _____________________________________________   
 echo:                                                          
 echo:          [4] Oku                                      
 echo:          [5] Anamenu                                    
-echo:          [6] Çıkış                                        
+echo:          [6] Cikiş                                        
 echo:       ___________________________________________________
 echo:   
 call :_color2 %_White% "        " %_Green% "Bir rakam seçin [1,2,3,4,5,6]"
