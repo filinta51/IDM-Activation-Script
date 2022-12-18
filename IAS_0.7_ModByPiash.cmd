@@ -75,22 +75,22 @@ if defined Silent call :begin %nul% & exit /b
 
 if not exist "%_psc%" (
 %nceline%
-echo Powershell is not installed in the system.
+echo Powershell sistemde yüklü değil.
 echo Aborting...
 goto done2
 )
 
 if %winbuild% LSS 7600 (
 %nceline%
-echo Unsupported OS version Detected.
-echo Project is supported only for Windows 7/8/8.1/10/11 and their Server equivalent.
+echo Sistem yazılımı tanımlanamadı.
+echo Proje Windows 7/8/8.1/10/11 versiyonlarını destekler.
 goto done2
 )
 
 ::========================================================================================================================================
 
 ::  Fix for the special characters limitation in path name
-::  Thanks to @abbodi1406
+::  Thanks to @filinta51
 
 set "_work=%~dp0"
 if "%_work:~-1%"=="\" set "_work=%_work:~0,-1%"
@@ -150,13 +150,13 @@ if defined reset goto _reset
 if defined activate goto _activate
 )
 
-:MainMenu
+:Menu
 
 cls
-title  IDM Activation Script 0.7 - @ModByPiash
+title  IDM Activation Script 0.7 - @filinta51
 mode 65, 25
 
-:: Check firewall status
+:: Kontrol et güvenlik duvarını
 
 set /a _ena=0
 set /a _dis=0
@@ -184,23 +184,23 @@ set _col=%_Yellow%
 call :_color2 %_White% "        " %_Green% "  Create By Piash"
 echo:          _____________________________________________   
 echo: 
-echo:          Telegram: @ModByPiash
-echo:          Github: https://github.com/lstprjct
+echo:          Telegram: @filinta11
+echo:          Github: https://github.com/filinta51
 echo:          _____________________________________________   
 echo:                                                          
-echo:          [1] Activate IDM                                
-echo:          [2] Reset IDM Activation / Trial in Registry
+echo:          [1] Active et IDM                                
+echo:          [2] Sıfırla IDM Activation / Deneme süresi
 echo:          _____________________________________________   
 echo:                                                          
-call :_color2 %_White% "          [3] Toggle Windows Firewall  " %_col% "[%_status%]"
+call :_color2 %_White% "          [3] Toggle Windows Güvenlik duvarı  " %_col% "[%_status%]"
 echo:          _____________________________________________   
 echo:                                                          
-echo:          [4] ReadMe                                      
-echo:          [5] Homepage                                    
-echo:          [6] Exit                                        
+echo:          [4] Oku                                      
+echo:          [5] Anamenu                                    
+echo:          [6] Çıkış                                        
 echo:       ___________________________________________________
 echo:   
-call :_color2 %_White% "        " %_Green% "Enter a menu option in the Keyboard [1,2,3,4,5,6]"
+call :_color2 %_White% "        " %_Green% "Bir rakam seçin [1,2,3,4,5,6]"
 choice /C:123456 /N
 set _erl=%errorlevel%
 
@@ -237,7 +237,7 @@ exit /b
 
 
 ::  Extract the text from batch script without character and file encoding issue
-::  Thanks to @abbodi1406
+::  Thanks to @filinta51
 
 :export
 
@@ -377,7 +377,7 @@ echo:
 echo:
 timeout /t 3
 
-start https://github.com/lstprjct/IDM-Activation-Script
+start https://github.com/filinta51/IDM-Activation-Script
 goto MainMenu
 
 ::========================================================================================================================================
@@ -495,7 +495,7 @@ goto :Check_file
 :delete_queue
 
 echo:
-echo Deleting registry keys...
+echo Siliniyor deneme kaydı...
 echo:
 
 for %%# in (
@@ -521,7 +521,7 @@ exit /b
 :add_key
 
 echo:
-echo Adding registry key...
+echo Yeni anahtar ekleniyor key...
 echo:
 
 set "reg="%HKLM%" /v "AdvIntDriverEnabled2""
